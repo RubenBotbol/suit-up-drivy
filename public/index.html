@@ -2,20 +2,168 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+
+    <style type="text/css">
+      
+      body
+      {
+        background-image:url(holidays.jpg);
+        align-content: center;
+        margin:0;  
+      }
+      #element
+      {
+        width: 50%;
+        margin: auto;
+      }
+      .grey
+      {
+        color: #000;
+        border: solid 1px #D3D3D3;
+        background: #4CAF50;
+        width: 200px;
+        padding: 150px;
+      }
+      .button
+      {
+        display: inline-block;;
+        cursor: pointer;
+        font: 20px/100% Comic;
+        padding: 15px 32px;
+        text-align: center;
+      }
+      .info
+      {
+        display: inline-block;
+        width: 300px;
+        text-align: right;
+        padding-left: 10px;
+        margin-left: 10px;
+      }
+      .homepage_baseline 
+      {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+      }
+      .homepage_baseline_container
+      {
+        position: relative;;
+        min-height: 200px;
+        height: 200px;
+      }
+      .homepage_title
+      {
+        margin: 0;
+        text-align: center;
+        color: #000;
+        font-size: 50px;
+      }
+      .homepage_subtitle
+      {
+        margin: 5px 0 0 0;
+        text-align: center;
+        color: #000;
+        font-size: 30px;
+      }
+
+      input, textarea {
+        width: 200px;
+        text-align: center;
+      }
+    </style>
+
   </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
+  <body id="element">
+  <h1 class="letterpress">
+  </h1>
+  <header class="header" id="header">
+    <h1 class="title">Drivy</h1>
+    <style type="text/css">
+      h1.title:before{
+        width: 250px;
+        content: "";
+        display: inline-block;
+        height: 30px;
+        margin-right: 30px;
+      }
+      h1.title:after{
+        width: 250px;
+        content:"";
+        display: inline-block;
+        height: 20px;
+        margin-left: 15px;
+      }
+    </style>
+  </header>
+
+    <div class="homepage_baseline_container">
+    <div class="homepage_baseline">
+    <h2 class="homepage_title">Location de vehi<span class="alternate">cu</span>les</h2>
+    <h2 class="homepage_subtitle">Prix attractifs, vacances garanties !</h2>
     </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
     </div>
-    <button id="compute">Compute</button>
+
+    <fieldset>
+      <legend>CAR</legend>
+      <div id="car">
+      <label class ="info">
+      <span class = "required">Model :</span>
+      <input class="model" type="text" required="required"/>
+      </label>
+      <div>
+      <label class ="info">
+      <span class = "required">Price by Day :</span>
+      <input class="price-by-day" type="text" required="required"/>
+      </label>
+      </div>
+      <div>
+      <label class ="info">
+      <span class = "required">Price by Km :</span>
+      <input class="price-by-km" type="text" required="required"/>
+      </label>
+      </div>
+      </fieldset>
+
+
+
+      <fieldset>
+      <legend>RENTAL</legend>
+      <div id="rental">
+      <label for="begin" class="info">
+      <span class="required">Begin :</span>
+      <input class= "begin" type="date" required="required"/>
+      </label>
+      </div>
+
+      <div>
+      <label for="end" class="info">
+      <span class="required">End :</span>
+      <input class= "end" type="date" required="required"/>
+      </label>
+      </div>
+
+      <div>
+      <label for="distance" class="info">
+      <span class="required">Price by Km :</span>
+      <input class= "distance" type="number" required="required"/>
+      </label>
+      </div>
+
+      <div>
+      <label for="option" class="info">
+      <span class="required">Deductible Option :</span>
+      <input class= "option" type="checkbox" required="required"/>
+      </label>
+      </div>
+      </fieldset>
+
+
+
+
+      
+    <button id="compute" class="button grey center">Compute</button>
     <div id="actors"></div>
     <script id="template" type="x-tmpl-mustache">
       {{#actors}}
